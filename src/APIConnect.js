@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 console.log(API_KEY);
-export default function getRequest() {
+export default function GetRequest() {
+
+    const [data, setData] = useState("");
 
     function test() {
         const options = {
@@ -23,14 +25,23 @@ export default function getRequest() {
         };
 
         fetch('https://api.openai.com/v1/chat/completions', options)
-            .then(response => console.log(response))
+            .then(response => response.json())
+            
+            .then(response => {
+                const questions = response.choices[0].message.content;
+
+                questions.json().then(data => setData(data))
+                
+            });
+
     };
+
         
     
     return (
         <div>
             <button onClick={test}>hej</button>
-
+            <p>{ data }</p>
         </div>
     )
 
