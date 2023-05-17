@@ -2,15 +2,13 @@ import Question from "./Question";
 
 
 export default function ShowQuiz(props){
-    console.log(props);
+    const questionsJson = JSON.parse(props.data);
     const quizLayout = () => {
-        let question = props.data[0].question;
-
     }
     return(
         <div>
-            {props.data.map(quiz => (
-                <Question key={quiz.question} quiz={quiz} />
+            {questionsJson.quiz.map(question => (
+                <Question key={question.question} question={question}/>
             ))}
         </div>
     )
