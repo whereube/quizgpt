@@ -1,4 +1,5 @@
 import Question from "./Question";
+import Card from 'react-bootstrap/Card';
 
 
 export default function ShowQuiz(props){
@@ -6,10 +7,15 @@ export default function ShowQuiz(props){
     const quizLayout = () => {
     }
     return(
-        <div>
-            {questionsJson.quiz.map(question => (
-                <Question key={question.question} question={question}/>
-            ))}
-        </div>
+        <>
+        {questionsJson.quiz.map(question => (
+            <Card>
+                <Card.Title>Fråga</Card.Title>
+                <Card.Body>
+                    <Question key={question.question} question={question}/>
+                </Card.Body>
+            </Card>
+        ))}
+        </>
     )
 }
