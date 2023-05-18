@@ -8,12 +8,65 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
 
+  let testList = {
+    "quiz": [
+      {
+        "question": "What band holds the record for the most number-one hits on the Billboard Hot 100 chart?",
+        "id": "123625323",
+        "answers": [
+          {
+            "answer": "The Beatles",
+            "is_correct": true
+          },
+          {
+            "answer": "The Rolling Stones",
+            "is_correct": false
+          },
+          {
+            "answer": "Led Zeppelin",
+            "is_correct": false
+          },
+          {
+            "answer": "Queen",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "question": "Who is the best-selling solo artist of all time?",
+        "id": "1241242412",
+        "answers": [
+          {
+            "answer": "Michael Jackson",
+            "is_correct": false
+          },
+          {
+            "answer": "Elvis Presley",
+            "is_correct": true
+          },
+          {
+            "answer": "Madonna",
+            "is_correct": false
+          },
+          {
+            "answer": "Whitney Houston",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  }
+  
+
   const API_KEY = process.env.REACT_APP_API_KEY;
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
 
-
+  const TestRequest = () => {
+    setData([JSON.stringify(testList)]); //istället för fetch temporärt
+  }
   const GetRequest = (choosenCategory) => {
+
     setLoading(true)
     const prompt = `Please provide me with a JSON-formatted quiz about ` + choosenCategory + `.
     The quiz should contain 2 questions, and each question should have 3 incorrect answers and one correct answer. 
@@ -84,20 +137,20 @@ function App() {
       })
     };
 
+
     fetch('https://api.openai.com/v1/chat/completions', options)
       .then(response => response.json())
       .then(response => {
         const questions = response.choices[0].message.content;
-        setLoading(false)
-        //questions.json().then(data => setData(data))
-        setData([questions])
-            
+        setLoading(false);
+        
+        setData([questions]);
       });
 
   };
   return (
     <div className="App">
-      <CreateQuiz GetRequest={GetRequest}/>
+      <CreateQuiz GetRequest={TestRequest}/>
       {loading && <ReactLoading type="spin" color='blue' height={200} width={200}/>}
       {data !== "" && <ShowQuiz data={data}/>}
     </div>
