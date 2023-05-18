@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 export default function CreateQuiz(props){
     const inputRef = useRef();
-    const InitiateRequest = () =>{
+    const InitiateRequest = () => {
         props.GetRequest(inputRef.current.value);
     }
     return(

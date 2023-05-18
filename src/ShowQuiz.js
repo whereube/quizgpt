@@ -7,7 +7,7 @@ export default function ShowQuiz(props){
     return(
         <>
         {questionsJson.quiz.map(question => (
-            <Question key={question.question} question={question}/>
+            <Question key={question.question} question={question} SetLiveScoreBoard={props.SetLiveScoreBoard}/>
         ))}
         </>
     )

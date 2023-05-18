@@ -26,8 +26,15 @@ export default function Answer(props){
 
         if (e.target.getAttribute('data-is_correct') === 'true') {
             //funktion för att hålla koll på poäng
+            let correct = 1;
+            let amount = 1;
+            props.SetLiveScoreBoard(correct, amount);
+        } else if (e.target.getAttribute('data-is_correct') === 'false') {
+            let correct = 0;
+            let amount = 1;
+            props.SetLiveScoreBoard(correct, amount);
         }
-
+            
     } 
 
     return(

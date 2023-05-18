@@ -2,9 +2,12 @@ import './App.css';
 import APIConnect from './APIConnect'
 import CreateQuiz from './CreateQuiz'
 import ShowQuiz from './ShowQuiz'
+import TotalScore from './TotalScore'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading'
 import React, { useState, useEffect } from 'react';
+import ScoreBoard from './LiveScoreBoard';
+import { getSelectionRange } from '@testing-library/user-event/dist/utils';
 
 function App() {
 
@@ -61,6 +64,25 @@ function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
+  const [liveScore, setLiveScore] = useState({
+    correct: 0,
+    amount: 0,
+  });
+
+  
+  const [totalScore, setTotalScore] = useState(() => {
+    const localData = localStorage.getItem('totalScore');
+    return localData ? JSON.parse(localData) : {
+      correct: 0,
+      amount: 0,
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('totalScore', JSON.stringify(totalScore));
+  }, [totalScore]);
+
+  
 
   const TestRequest = () => {
     setData([JSON.stringify(testList)]); //istället för fetch temporärt
@@ -137,7 +159,6 @@ function App() {
       })
     };
 
-
     fetch('https://api.openai.com/v1/chat/completions', options)
       .then(response => response.json())
       .then(response => {
@@ -146,13 +167,38 @@ function App() {
         
         setData([questions]);
       });
-
   };
+
+  const SetLiveScoreBoard = (correct, amount) => {
+    let newScore = liveScore['correct'] + correct;
+    let newAmount = liveScore['amount'] + amount;
+
+    let newTotalScore = totalScore['correct'] + correct;
+    let newTotalAmount = totalScore['amount'] + amount;
+
+    let updatedTotalScore = {
+      correct: newTotalScore,
+      amount: newTotalAmount,
+    }
+
+    setTotalScore(updatedTotalScore);
+    
+    let updatedScore = {
+      correct: newScore,
+      amount: newAmount,
+    }
+
+    setLiveScore(updatedScore);
+  }
+
+
   return (
     <div className="App">
-      <CreateQuiz GetRequest={TestRequest}/>
-      {loading && <ReactLoading type="spin" color='blue' height={200} width={200}/>}
-      {data !== "" && <ShowQuiz data={data}/>}
+      <CreateQuiz GetRequest={TestRequest} />
+      {loading && <ReactLoading type="spin" color='blue' height={200} width={200} />}
+      {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} />}
+      <ScoreBoard liveScore={liveScore} />
+      <TotalScore totalScore={totalScore} />
     </div>
   );
 };
