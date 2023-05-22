@@ -2,8 +2,6 @@ import Answer from "./Answer";
 import Card from 'react-bootstrap/Card';
 import { useRef, useEffect } from 'react';
 import './CSS/Question.css';
-import Carousel from 'react-bootstrap/Carousel';
-
 
 export default function Question(props) {
 
