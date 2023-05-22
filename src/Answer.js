@@ -1,14 +1,14 @@
 import Button from 'react-bootstrap/Button';
+import './CSS/Answer.css';
+
 
 export default function Answer(props){
 
     const checkIfCorrect = e => {
         
-            
         const questionId =  e.target.getAttribute('data-questionid');
         const idString = "[data-questionid='" + questionId + "']";
 
-        
         const btns = document.querySelectorAll(idString);
         for (let i = 0; i < btns.length; i++) {
             console.log(btns[i]);
@@ -34,7 +34,6 @@ export default function Answer(props){
             let amount = 1;
             props.SetLiveScoreBoard(correct, amount);
         }
-            
     } 
 
     return(

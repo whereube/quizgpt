@@ -1,6 +1,8 @@
+HEAD
 import './TotalScore.css';
 import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+
 
 export default function ScoreBoard(props){
     const [show, setShow] = useState(false);
