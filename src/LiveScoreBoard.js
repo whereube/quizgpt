@@ -1,4 +1,4 @@
-import './Question.css';
+import './CSS/Question.css';
 
 
 export default function ScoreBoard(props){

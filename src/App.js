@@ -1,5 +1,4 @@
-import './App.css';
-import APIConnect from './APIConnect'
+import './CSS/App.css';
 import CreateQuiz from './CreateQuiz'
 import ShowQuiz from './ShowQuiz'
 import TotalScore from './TotalScore'
