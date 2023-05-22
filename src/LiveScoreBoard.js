@@ -1,7 +1,3 @@
-HEAD
-import './CSS/Question.css';
-
-import './Question.css';
 import { Card } from 'react-bootstrap';
 
 

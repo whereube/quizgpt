@@ -1,5 +1,4 @@
-HEAD
-import './TotalScore.css';
+import './CSS/TotalScore.css';
 import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
