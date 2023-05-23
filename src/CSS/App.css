@@ -3,6 +3,14 @@
   font-family: 'Comfortaa', cursive;
 }
 
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,6 +36,8 @@
 .App-link {
   color: #61dafb;
 }
+
+
 
 @keyframes App-logo-spin {
   from {

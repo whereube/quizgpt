@@ -5,8 +5,7 @@ import TotalScore from './TotalScore'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading'
 import React, { useState, useEffect } from 'react';
-import ScoreBoard from './LiveScoreBoard';
-import { getSelectionRange } from '@testing-library/user-event/dist/utils';
+import LiveScoreBoard from './LiveScoreBoard';
 
 function App() {
 
@@ -190,13 +189,23 @@ function App() {
     setLiveScore(updatedScore);
   }
 
+  const showLiveScoreBoard = (e) => {
+    const liveScore = document.getElementsByClassName("livescore")[0];
+
+    e.target.parentElement.classList.remove("question-section");
+    e.target.parentElement.classList.add("question-section-2");
+
+    liveScore.classList.add("question-section");
+  }
+
+
 
   return (
     <div className="App">
       <CreateQuiz GetRequest={TestRequest} />
       {loading && <ReactLoading type="spin" color='blue' height={200} width={200} />}
-      {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} />}
-      <ScoreBoard liveScore={liveScore} />
+      {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} showLiveScoreBoard={showLiveScoreBoard}/>}
+      <LiveScoreBoard liveScore={liveScore}></LiveScoreBoard>
       <TotalScore totalScore={totalScore} />
     </div>
   );

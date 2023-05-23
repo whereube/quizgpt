@@ -1,6 +1,6 @@
 import Answer from "./Answer";
+import LiveScoreBoard from "./LiveScoreBoard";
 import Card from 'react-bootstrap/Card';
-import { useRef, useEffect } from 'react';
 import './CSS/Question.css';
 
 export default function Question(props) {
@@ -21,6 +21,8 @@ export default function Question(props) {
         e.target.parentElement.previousSibling.classList.add("question-section");
     }
 
+
+
     return(
         <>
             {props.index === 0 && 
@@ -36,7 +38,7 @@ export default function Question(props) {
                 <button onClick={nextQuestion} className="next-btn">Next</button>
             </div>
             }
-            {(props.index > 0 && props.index < 3) && 
+            {(props.index > 0) && 
             <div className="question-section-2">
                 <Card>
                     <Card.Title className="question-title"><h2>{props.question.question}</h2></Card.Title>
@@ -47,7 +49,8 @@ export default function Question(props) {
                     </Card.Body>
                 </Card>
                 <button onClick={previousQuestion} className="next-btn">Previous</button>
-                <button onClick={nextQuestion} className="next-btn">Next</button>
+                {props.index + 1 < props.nrOfQuestions && <button onClick={nextQuestion} className="next-btn">Next</button>}
+                {props.index + 1 === props.nrOfQuestions && <button onClick={props.showLiveScoreBoard} className="next-btn">Finish</button>}
             </div>
             }
         </>

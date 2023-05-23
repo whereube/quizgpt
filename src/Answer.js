@@ -11,7 +11,6 @@ export default function Answer(props){
 
         const btns = document.querySelectorAll(idString);
         for (let i = 0; i < btns.length; i++) {
-            console.log(btns[i]);
             if (btns[i].getAttribute('data-is_correct') === 'true') {
                 btns[i].classList.remove("btn-primary");
                 btns[i].classList.add("btn-success");

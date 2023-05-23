@@ -1,17 +1,17 @@
 import { Card } from 'react-bootstrap';
 
 
-export default function ScoreBoard(props){
+export default function LiveScoreBoard(props){
 
 
 
     return(
-        <div>
+        <div className='livescore hide'>
             <Card>
-                <Card.Title>Finish!</Card.Title>
+                <Card.Title>Finished!</Card.Title>
                 <Card.Body>
                     <p>Great work! You got: </p>
-                    <p>{props.liveScore['correct']} correct answers, out of {props.liveScore['amount']}</p>     
+                    <p>{props.liveScore['correct']} correct answers, out of {props.liveScore['amount']} questions</p>     
                 </Card.Body>
             </Card>
         </div>
