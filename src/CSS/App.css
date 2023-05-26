@@ -11,6 +11,12 @@
   display: none;
 }
 
+.loading{
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
