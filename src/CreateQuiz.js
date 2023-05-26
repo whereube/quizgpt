@@ -38,7 +38,7 @@ export default function CreateQuiz(props){
                 </InputGroup>
             </>
                 <div className="text-center quizGenerate">
-                    <Button className="w-25" onClick={InitiateRequest} variant="outline-success" size="lg">
+                    <Button onClick={InitiateRequest} variant="outline-success" size="lg">
                         Generate Quiz
                     </Button>
                 </div>
