@@ -156,6 +156,7 @@ function App() {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
+        temperature: 1,
         messages: [{
           role: "user",
           content: prompt 
@@ -166,6 +167,7 @@ function App() {
     fetch('https://api.openai.com/v1/chat/completions', options)
       .then(response => response.json())
       .then(response => {
+        console.log(response);
         const questions = response.choices[0].message.content;
         setLoading(false);
         
