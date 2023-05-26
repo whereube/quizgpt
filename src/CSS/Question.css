@@ -2,6 +2,7 @@
     margin: auto;
     margin-top: 10px;
     max-width: 1000px;
+    min-height: 400px;
     margin-bottom: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: none;
@@ -13,13 +14,13 @@
     margin: auto;
     margin-top: 10px;
     margin-bottom: 100px;
+    min-height: 400px;
     max-width: 1000px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: none;
     border-radius: 5px;
     display: none;
 }
-
 
 .question-section > div {
     border: none;
@@ -37,6 +38,11 @@
     font-size: 30px;
 }
 
+.question-title > h3 {
+    padding-top: 70px;
+    font-size: 40px;
+}
+
 .question-body {
     margin: auto;
     display: grid;
@@ -49,6 +55,7 @@
     padding: 10px;
     margin: auto;
 }
+
 
 .next-btn {
     background-color: rgb(51, 150, 51);
