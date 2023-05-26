@@ -1,4 +1,5 @@
 .question-section {
+    background-color: white;
     margin: auto;
     margin-top: 10px;
     max-width: 1000px;
@@ -11,6 +12,7 @@
 }
 
 .question-section-2 {
+    background-color: white;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 100px;
