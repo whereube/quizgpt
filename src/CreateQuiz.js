@@ -8,25 +8,34 @@ import './CSS/CreateQuiz.css';
 export default function CreateQuiz(props){
     const inputRef = useRef();
     const InitiateRequest = () => {
-        props.GetRequest(inputRef.current.value);
+        props.updateCategory(inputRef.current.value)
+        props.GetRequest(inputRef.current.value)
+        hideOrShowSearchDiv();
     }
+
+    const hideOrShowSearchDiv = () => {
+        const searchDiv = document.getElementsByClassName("searchDiv")[0];
+        searchDiv.classList.add("hide")
+    }
+
     return(
         <div>
-            <>
-            <h1 id="headline">Quiz generator</h1>
-          <InputGroup className="mb-3 w-75 inputField mx-auto">
-            <InputGroup.Text id="categoryInput">Write category</InputGroup.Text>
-            <Form.Control ref={inputRef}
-              placeholder="Category"
-              aria-label="Category"
-              aria-describedby="categoryInput"
-            />
-            </InputGroup>
-        </>
-            <div className="text-center quizGenerate">
-                <Button className="w-25" onClick={InitiateRequest} variant="light" size="lg">
-                    Generate Quiz
-                </Button>
+            <h1 id="headline">Quiz GPT</h1>
+            <div className="searchDiv">
+                <>
+                <InputGroup className="mb-3 w-75 inputField mx-auto">
+                <Form.Control ref={inputRef}
+                    placeholder="Write a quiz category..."
+                    aria-label="Category"
+                    aria-describedby="categoryInput"
+                />
+                </InputGroup>
+            </>
+                <div className="text-center quizGenerate">
+                    <Button className="w-25" onClick={InitiateRequest} variant="outline-success" size="lg">
+                        Generate Quiz
+                    </Button>
+                </div>
             </div>
         </div>
     )

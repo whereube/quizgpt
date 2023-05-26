@@ -8,6 +8,25 @@
     padding-bottom:75px;
 }
 
+.inputField input{
+    line-height: 50px;
+    font-size: 36px; 
+    text-align: center;
+}
+
+
+
 .quizGenerate{
     margin-bottom:20px;
+}
+.quizGenerate button{
+    background-color: white;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
 }
