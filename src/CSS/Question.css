@@ -80,4 +80,8 @@
         "answer "
         "answer ";
     }
+
+    .next-btn {
+        width: 30%;
+    }
 }

@@ -226,7 +226,7 @@ function App() {
       <CreateQuiz GetRequest={GetRequest} updateCategory={updateCategory} />
       {loading && 
       <>
-      <h2 className='loadingText'>Generating {category} quiz</h2>
+      <h2 className='loadingText'>Generating {category} quiz...</h2>
       <ReactLoading type="spin" color='white' height={100} width={100} className='loading'/>
       </>}
       {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} showLiveScoreBoard={showLiveScoreBoard}/>}
