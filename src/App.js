@@ -66,6 +66,7 @@ function App() {
     correct: 0,
     amount: 0,
   });
+  const [category, setCategory] = useState("");
 
   
   const [totalScore, setTotalScore] = useState(() => {
@@ -211,12 +212,23 @@ function App() {
     liveScore.classList.add("question-section-2");
   }
 
+  const updateCategory = (category) => {
+    if(category === ""){
+      setCategory("random")
+    }else{
+      setCategory(category)
+    }
+  }
 
 
   return (
     <div className="App">
-      <CreateQuiz GetRequest={GetRequest} />
-      {loading && <ReactLoading type="spin" color='blue' height={100} width={100} className='loading'/>}
+      <CreateQuiz GetRequest={GetRequest} updateCategory={updateCategory} />
+      {loading && 
+      <>
+      <h2 className='loadingText'>Generating a {category} quiz</h2>
+      <ReactLoading type="spin" color='white' height={100} width={100} className='loading'/>
+      </>}
       {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} showLiveScoreBoard={showLiveScoreBoard}/>}
       <LiveScoreBoard liveScore={liveScore}></LiveScoreBoard>
       <TotalScore totalScore={totalScore} />
