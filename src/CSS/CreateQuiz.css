@@ -1,9 +1,15 @@
 #headline{
-    font-size:16vw;
+    font-size:12vw;
     margin-top:75px;
     margin-bottom:75px;
     color:white;
 }
+
+#headline-link{
+    text-decoration: none;
+    color: white;
+}
+
 .inputField{
     padding-bottom:75px;
 }
@@ -28,3 +34,8 @@
 }
 
 
+@media screen and (max-width: 700px) {
+    #headline{
+        font-size:16vw;
+    }
+}

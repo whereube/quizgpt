@@ -93,7 +93,7 @@ function App() {
     hideLiveScoreBoard();
     setLoading(true);
     const prompt = `Please provide me with a JSON-formatted quiz about ` + choosenCategory + `.
-    The quiz should contain 2 questions, and each question should have 3 incorrect answers and one correct answer. 
+    The quiz should contain 3 questions, and each question should have 3 incorrect answers and one correct answer. 
     Ensure that the incorrect answers are unique and different from the correct answer. 
     Please provide the response in the following format: a JSON object with three different objects for each question: "question," "answers", "id". 
     Each answer should have another key with a bool value that indicates which one is correct and which ones are not correct. 
