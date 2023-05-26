@@ -21,7 +21,7 @@ export default function ScoreBoard(props){
 
     return(
         <div className="showScore">
-            <Button className="bottom-right w-10" onClick={handleShow} variant="outline-success" size="lg">
+            <Button className="bottom-right w-10" onClick={handleShow} variant="outline-light" size="lg">
                     Alltime score
             </Button>
 

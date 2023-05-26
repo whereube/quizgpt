@@ -2,7 +2,12 @@
     font-size:10vw;
     margin-top:75px;
     margin-bottom:75px;
+    color:white;
 }
 .inputField{
     padding-bottom:75px;
+}
+
+.quizGenerate{
+    margin-bottom:20px;
 }

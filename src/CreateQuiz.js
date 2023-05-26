@@ -23,8 +23,8 @@ export default function CreateQuiz(props){
             />
             </InputGroup>
         </>
-            <div className="text-center">
-                <Button className="w-25" onClick={InitiateRequest} variant="success" size="lg">
+            <div className="text-center quizGenerate">
+                <Button className="w-25" onClick={InitiateRequest} variant="light" size="lg">
                     Generate Quiz
                 </Button>
             </div>
