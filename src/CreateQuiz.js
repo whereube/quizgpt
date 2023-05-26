@@ -10,6 +10,11 @@ export default function CreateQuiz(props){
     const InitiateRequest = () => {
         props.GetRequest(inputRef.current.value);
     }
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          InitiateRequest();
+        }
+    };
     return(
         <div>
             <>
@@ -20,6 +25,7 @@ export default function CreateQuiz(props){
               placeholder="Category"
               aria-label="Category"
               aria-describedby="categoryInput"
+              onKeyDown={handleKeyDown}
             />
             </InputGroup>
         </>
