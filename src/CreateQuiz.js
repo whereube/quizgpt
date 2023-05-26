@@ -25,7 +25,7 @@ export default function CreateQuiz(props){
     }
     return(
         <div>
-            <h1 id="headline"></h1>
+            <h1 id="headline">Quiz GPT</h1>
             <div className="searchDiv">
                 <>
                 <InputGroup className="mb-3 w-75 inputField mx-auto">
