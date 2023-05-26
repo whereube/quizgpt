@@ -83,11 +83,14 @@ function App() {
   
 
   const TestRequest = () => {
+    console.log(data)
     setData([JSON.stringify(testList)]); //istället för fetch temporärt
   }
-  const GetRequest = (choosenCategory) => {
 
-    setLoading(true)
+  const GetRequest = (choosenCategory) => {
+    
+    setData("");
+    setLoading(true);
     const prompt = `Please provide me with a JSON-formatted quiz about ` + choosenCategory + `.
     The quiz should contain 2 questions, and each question should have 3 incorrect answers and one correct answer. 
     Ensure that the incorrect answers are unique and different from the correct answer. 
@@ -202,7 +205,7 @@ function App() {
 
   return (
     <div className="App">
-      <CreateQuiz GetRequest={TestRequest} />
+      <CreateQuiz GetRequest={GetRequest} />
       {loading && <ReactLoading type="spin" color='blue' height={200} width={200} />}
       {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} showLiveScoreBoard={showLiveScoreBoard}/>}
       <LiveScoreBoard liveScore={liveScore}></LiveScoreBoard>
