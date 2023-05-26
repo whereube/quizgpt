@@ -1,6 +1,7 @@
 import './CSS/TotalScore.css';
 import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Button from 'react-bootstrap/Button';
 
 
 export default function ScoreBoard(props){
@@ -19,8 +20,10 @@ export default function ScoreBoard(props){
     }
 
     return(
-        <div>
-            <button onClick={handleShow}>Show total score </button>
+        <div className="showScore">
+            <Button className="bottom-right w-10" onClick={handleShow} variant="outline-success" size="lg">
+                    Alltime score
+            </Button>
 
             <Offcanvas show={show} onHide={handleClose} placement="top">
                 <Offcanvas.Header closeButton>

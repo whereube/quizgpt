@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
-import './CreateQuiz.css';
+import './CSS/CreateQuiz.css';
 //import InputFreeText from './InputFreeText'
 
 export default function CreateQuiz(props){
