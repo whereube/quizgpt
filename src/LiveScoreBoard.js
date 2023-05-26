@@ -6,7 +6,7 @@ export default function LiveScoreBoard(props){
 
 
     return(
-        <div className='livescore hide'>
+        <div className='livescore question-section-2'>
             <Card>
                 <Card.Title className="question-title"><h3>Finished!</h3></Card.Title>
                 <Card.Body className="question-body-finish">

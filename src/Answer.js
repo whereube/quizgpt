@@ -5,7 +5,6 @@ import './CSS/Answer.css';
 export default function Answer(props){
 
     const checkIfCorrect = e => {
-        
         const questionId =  e.target.getAttribute('data-questionid');
         const idString = "[data-questionid='" + questionId + "']";
 

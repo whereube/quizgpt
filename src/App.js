@@ -83,18 +83,18 @@ function App() {
   
 
   const TestRequest = () => {
-    console.log(data)
     setData([JSON.stringify(testList)]); //istället för fetch temporärt
   }
 
   const GetRequest = (choosenCategory) => {
     
     setData("");
+    hideLiveScoreBoard();
     setLoading(true);
     const prompt = `Please provide me with a JSON-formatted quiz about ` + choosenCategory + `.
     The quiz should contain 2 questions, and each question should have 3 incorrect answers and one correct answer. 
     Ensure that the incorrect answers are unique and different from the correct answer. 
-    Please provide the response in the following format: a JSON object with two different objects for each question: "question," "answers". 
+    Please provide the response in the following format: a JSON object with three different objects for each question: "question," "answers", "id". 
     Each answer should have another key with a bool value that indicates which one is correct and which ones are not correct. 
     The four different keys should be named "question", "answers", "answer" and "is_correct". 
     The main object should be named "quiz". The response should look like this: 
@@ -102,6 +102,7 @@ function App() {
         "quiz": [
           {
             "question": "Example question 1",
+            "id": "Example id",
             "answers": [
               {
                 "answer": "Example answer 1.1",
@@ -123,6 +124,7 @@ function App() {
           },
           {
             "question": "Example question 2",
+            "id": "Example id2",
             "answers": [
               {
                 "answer": "Example answer 2.1",
@@ -198,15 +200,23 @@ function App() {
     e.target.parentElement.classList.remove("question-section");
     e.target.parentElement.classList.add("question-section-2");
 
+    liveScore.classList.remove("question-section-2");
     liveScore.classList.add("question-section");
+  }
+
+  const hideLiveScoreBoard = () => {
+    const liveScore = document.getElementsByClassName("livescore")[0];
+
+    liveScore.classList.remove("question-section");
+    liveScore.classList.add("question-section-2");
   }
 
 
 
   return (
     <div className="App">
-      <CreateQuiz GetRequest={TestRequest} />
-      {loading && <ReactLoading type="spin" color='blue' height={200} width={200} />}
+      <CreateQuiz GetRequest={GetRequest} />
+      {loading && <ReactLoading type="spin" color='blue' height={100} width={100} className='loading'/>}
       {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} showLiveScoreBoard={showLiveScoreBoard}/>}
       <LiveScoreBoard liveScore={liveScore}></LiveScoreBoard>
       <TotalScore totalScore={totalScore} />
