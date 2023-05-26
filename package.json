@@ -1,5 +1,6 @@
 {
   "name": "quizgpt",
+  "homepage": "https://freto.se",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
