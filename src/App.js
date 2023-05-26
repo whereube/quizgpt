@@ -205,7 +205,7 @@ function App() {
 
   return (
     <div className="App">
-      <CreateQuiz GetRequest={GetRequest} />
+      <CreateQuiz GetRequest={TestRequest} />
       {loading && <ReactLoading type="spin" color='blue' height={200} width={200} />}
       {data !== "" && <ShowQuiz data={data} SetLiveScoreBoard={SetLiveScoreBoard} showLiveScoreBoard={showLiveScoreBoard}/>}
       <LiveScoreBoard liveScore={liveScore}></LiveScoreBoard>
