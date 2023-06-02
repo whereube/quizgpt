@@ -6,6 +6,7 @@ import './CSS/Question.css';
 export default function Question(props) {
 
     const nextQuestion = (e) => {
+        {/* Let user click on next question and get the question after */}
         e.target.parentElement.classList.remove("question-section");
         e.target.parentElement.classList.add("question-section-2");
 
@@ -14,6 +15,7 @@ export default function Question(props) {
     }
 
     const previousQuestion = (e) => {
+        {/* Lets the user click on previous question to get to the question previous to the current */}
         e.target.parentElement.classList.remove("question-section");
         e.target.parentElement.classList.add("question-section-2");
 

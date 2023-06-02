@@ -5,14 +5,16 @@ import Button from 'react-bootstrap/Button';
 
 
 export default function ScoreBoard(props){
+    {/* Handles if the scoreboard should be on display on not for the user  */}
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const calculatePercentage = () => {
-        if (props.totalScore['amount'] === 0) {
+        {/* Calculating the percentage on total correct answer */}
+        if (props.totalScore['amount'] === 0) { // if correct answer is 0 return 0
             return "0"
-        } else {
+        } else { //else return percentage of total correct answer
             let percentage = Math.round(props.totalScore['correct']/props.totalScore['amount'] * 100, 0);
             return percentage
         }
