@@ -4,7 +4,13 @@ Quiz GPT är en applikation som använder OpenAIs API. Med API-modellen gpt-3.5-
 
 Quiz GPT är byggt med ramverket React. Vid valet av ramverk var vi från början ganska inställda på att välja React. Anledningen till det, är ramverkets popularitet och efterfrågan på arbetsmarknaden. Det finns dock flera andra skäl till att använda React. För det första är React känt för sin flexibilitet och skalbarhet. Det tillåter oss att bygga komponentbaserade gränssnitt på ett modulärt sätt, vilket gör det lätt att återanvända och vidareutveckla vår kod. Reacts virtuella DOM-koncept möjliggör effektiva och snabba uppdateringar av användargränssnittet. En annan anledning till att välja React är deras omfattande community. Online finns det mycket information att tillgå de stunder vi har kört fast. Vid valet av ramverk jämförde vi också React med Vue och Angular. Vue är kanske mest känt för att vara ett ramverk som passar bra för nybörjare. Det ska vara relativt lätt att komma igång med och har bra funktionalitet för mindre applikationer. Dock är Vue lite begränsat, bland annat när det kommer till tredje-parts-bibliotek. Angular, till skillnad från Vue, sägs vara ett ramverk med mycket högre tröskel. Att lära sig Angular tar ofta längre tid eftersom koden skrivs i TypeScript. Att använda Angular passar sig också oftast bättre om det är en större applikation som ska byggas. 
 
+För att köra applikationen
 
+1. Install Node.js 
+2. Clone repository from github
+3. Navigate to project directory (cd quiz-gpt)
+4. Install dependencies (npm install)
+5. Start the server (npm start)
 
 
 
