@@ -1,3 +1,13 @@
+Quiz GPT är den ultimata applikationen för att generera quiz! Att skapa ett quiz är jätteenkelt. Du som användare behöver inte komma på några frågor själv och du kan själv delta i quizet. Skriv in vad du vill att quizet ska handla om, vänta medans quizet genereras och börja sedan quiza! 
+
+Quiz GPT är en applikation som använder OpenAIs API. Med API-modellen gpt-3.5-turbo tar applikationen användarens input och matar in detta i en, av oss, förskriven prompt till APIt. APIt skickar sedan tillbaka ett quiz i JSON-format enligt det angivna temat. I applikationen presenterar vi quizet på ett klassiskt quiz-vis där användaren kan se frågorna, klicka i sitt svar och se poängställning. I local storage sparar applikationen användarens spelhistorik och på så sätt kan användaren se sin ”All time score” i procent. 
+
+Quiz GPT är byggt med ramverket React. Vid valet av ramverk var vi från början ganska inställda på att välja React. Anledningen till det, är ramverkets popularitet och efterfrågan på arbetsmarknaden. Det finns dock flera andra skäl till att använda React. För det första är React känt för sin flexibilitet och skalbarhet. Det tillåter oss att bygga komponentbaserade gränssnitt på ett modulärt sätt, vilket gör det lätt att återanvända och vidareutveckla vår kod. Reacts virtuella DOM-koncept möjliggör effektiva och snabba uppdateringar av användargränssnittet. En annan anledning till att välja React är deras omfattande community. Online finns det mycket information att tillgå de stunder vi har kört fast. Vid valet av ramverk jämförde vi också React med Vue och Angular. Vue är kanske mest känt för att vara ett ramverk som passar bra för nybörjare. Det ska vara relativt lätt att komma igång med och har bra funktionalitet för mindre applikationer. Dock är Vue lite begränsat, bland annat när det kommer till tredje-parts-bibliotek. Angular, till skillnad från Vue, sägs vara ett ramverk med mycket högre tröskel. Att lära sig Angular tar ofta längre tid eftersom koden skrivs i TypeScript. Att använda Angular passar sig också oftast bättre om det är en större applikation som ska byggas. 
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
