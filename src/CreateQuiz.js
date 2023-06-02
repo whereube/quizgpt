@@ -3,17 +3,19 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import './CSS/CreateQuiz.css';
-//import InputFreeText from './InputFreeText'
+
 
 export default function CreateQuiz(props){
     const inputRef = useRef();
     const InitiateRequest = () => {
+        {/* Makes an API call */}
         props.updateCategory(inputRef.current.value)
         props.GetRequest(inputRef.current.value)
         hideOrShowSearchDiv();
     }
 
     const handleKeyDown = (event) => {
+        {/* Makes an API call on enter */}
         if (event.key === 'Enter') {
           InitiateRequest();
         }
